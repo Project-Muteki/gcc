@@ -1755,6 +1755,8 @@ case $os in
 	sco3.2v2 | sco3.2v[4-9]* | sco5v6*)
 		# Don't forget version if it is 3.2v4 or newer.
 		;;
+    besta*eabi*)
+        ;;
 	none)
 		;;
 	*)
