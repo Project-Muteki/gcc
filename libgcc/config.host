@@ -527,11 +527,11 @@ arm*-*-phoenix*)
 	extra_parts="crtbegin.o crtend.o crti.o crtn.o"
 	unwind_header=config/arm/unwind-arm.h
 	;;
-arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
+arm*-*-eabi* | arm*-*-besta*eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
 	tmake_file="${tmake_file} arm/t-arm arm/t-elf t-fixedpoint-gnu-prefix"
 	tm_file="$tm_file arm/bpabi-lib.h"
 	case ${host} in
-	arm*-*-eabi* | arm*-*-rtems*)
+	arm*-*-eabi* | arm*-*-besta*eabi* | arm*-*-rtems*)
 	  tmake_file="${tmake_file} arm/t-bpabi t-crtfm"
 	  extra_parts="crtbegin.o crtend.o crti.o crtn.o"
 	  ;;

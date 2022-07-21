@@ -1398,7 +1398,7 @@ arm*-*-phoenix*)
 	tmake_file="${tmake_file} arm/t-arm arm/t-bpabi arm/t-phoenix"
 	target_cpu_cname="arm7tdmi"
 	;;
-arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-fuchsia*)
+arm*-*-eabi* | arm*-*-besta*eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-fuchsia*)
 	case ${target} in
 	arm*eb-*-eabi*)
 	  tm_defines="${tm_defines} TARGET_BIG_ENDIAN_DEFAULT=1"
@@ -1409,6 +1409,12 @@ arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-fuchsia*)
 	target_cpu_cname="arm7tdmi"
 	case ${target} in
 	arm*-*-eabi*)
+	  tm_file="$tm_file newlib-stdint.h"
+	  tmake_file="${tmake_file} arm/t-bpabi"
+	  use_gcc_stdint=wrap
+	  ;;
+	arm*-*-besta*eabi*)
+	  # TODO vendor specific stuff here
 	  tm_file="$tm_file newlib-stdint.h"
 	  tmake_file="${tmake_file} arm/t-bpabi"
 	  use_gcc_stdint=wrap
