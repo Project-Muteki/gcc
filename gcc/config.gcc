@@ -1414,8 +1414,7 @@ arm*-*-eabi* | arm*-*-besta*eabi* | arm*-*-symbianelf* | arm*-*-rtems* | arm*-*-
 	  use_gcc_stdint=wrap
 	  ;;
 	arm*-*-besta*eabi*)
-	  # TODO vendor specific stuff here
-	  tm_file="$tm_file newlib-stdint.h"
+	  tm_file="$tm_file newlib-stdint.h arm/besta.h"
 	  tmake_file="${tmake_file} arm/t-bpabi"
 	  use_gcc_stdint=wrap
 	  ;;
