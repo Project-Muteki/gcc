@@ -17,7 +17,11 @@
    along with GCC; see the file COPYING3.  If not see
    <http://www.gnu.org/licenses/>.  */
 
-/* muteki-shims is necessary for muteki newlib */
+/* Default to short wchar_t. */
+#undef  CC1_SPEC
+#define CC1_SPEC "%{!fshort-wchar:%{!fno-short-wchar:-fshort-wchar}}"
+
+/* muteki-shims is necessary for muteki newlib. */
 #undef  LIB_SPEC
 #define LIB_SPEC "%{!shared:%{g*:-lg} %{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}} -lmutekishims"
 
