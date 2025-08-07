@@ -23,7 +23,7 @@
 
 /* muteki-shims is necessary for muteki newlib. */
 #undef  LIB_SPEC
-#define LIB_SPEC "%{!shared:%{g*:-lg} %{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}} -lmutekishims"
+#define LIB_SPEC "%{!shared:%{g*:-lg} %{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}} -lmuteki-osdep -lmuteki-shims"
 
 /* Relocs are needed for post linker to produce the final PE EXE file.
    Also implement the workaround for elf2bestape, although those 2 options are
